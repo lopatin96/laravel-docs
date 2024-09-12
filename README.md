@@ -9,15 +9,15 @@ Replace content of *resource/views/layouts/header.blade.php* with:
 # Publishing
 ### Localization
 ```php
-php artisan vendor:publish --tag="laravel-navigation-lang"
+php artisan vendor:publish --tag="laravel-docs-lang"
 ```
 
 ### Views
 ```php
-php artisan vendor:publish --tag="laravel-navigation-views"
+php artisan vendor:publish --tag="laravel-docs-views"
 ```
 
 ### Config
 ```php
-php artisan vendor:publish --tag="laravel-navigation-config"
+php artisan vendor:publish --tag="laravel-docs-config"
 ```

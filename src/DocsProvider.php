@@ -19,6 +19,8 @@ class DocsProvider extends ServiceProvider
 
         $this->loadTranslationsFrom(__DIR__.'/../lang', 'laravel-docs');
 
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'laravel-docs');
+
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/laravel-docs')
         ], 'laravel-docs-views');
@@ -26,5 +28,9 @@ class DocsProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../lang' => $this->app->langPath('vendor/laravel-docs'),
         ], 'laravel-docs-lang');
+
+        $this->publishes([
+            __DIR__.'/../config/config.php' => config_path('laravel-docs.php')
+        ], 'laravel-docs-config');
     }
 }

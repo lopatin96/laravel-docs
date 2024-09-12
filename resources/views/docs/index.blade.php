@@ -32,34 +32,34 @@
             <div class="flex flex-wrap">
                 <div class="border-e border-gray-200">
                     <nav class="flex flex-col space-y-2" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
-                        <button type="button" class="hs-tab-active:border-blue-500 hs-tab-active:text-blue-600 py-1 pe-4 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 disabled:opacity-50 disabled:pointer-events-none active" id="vertical-tab-with-border-item-1" aria-selected="true" data-hs-tab="#vertical-tab-with-border-1" aria-controls="vertical-tab-with-border-1" role="tab">
-                            1. Plagiarism
-                        </button>
-                        <button type="button" class="hs-tab-active:border-blue-500 hs-tab-active:text-blue-600 py-1 pe-4 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 disabled:opacity-50 disabled:pointer-events-none" id="vertical-tab-with-border-item-2" aria-selected="false" data-hs-tab="#vertical-tab-with-border-2" aria-controls="vertical-tab-with-border-2" role="tab">
-                            2. Report
-                        </button>
-                        <button type="button" class="hs-tab-active:border-blue-500 hs-tab-active:text-blue-600 py-1 pe-4 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 disabled:opacity-50 disabled:pointer-events-none" id="vertical-tab-with-border-item-3" aria-selected="false" data-hs-tab="#vertical-tab-with-border-3" aria-controls="vertical-tab-with-border-3" role="tab">
-                            3. API
-                        </button>
+                        @foreach(config("laravel-docs.sections") as $section)
+                            <button
+                                type="button"
+                                class="hs-tab-active:border-blue-500 hs-tab-active:text-blue-600 py-1 pe-4 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 disabled:opacity-50 disabled:pointer-events-none active"
+                                id="vertical-tab-with-border-item-{{ $loop->iteration }}"
+                                aria-selected="{{ $loop->first }}"
+                                data-hs-tab="#vertical-tab-with-border-{{ $loop->iteration }}"
+                                aria-controls="vertical-tab-with-border-{{ $loop->iteration }}"
+                                role="tab"
+                            >
+                                {{ $loop->iteration }}. {{ __('laravel-docs::docs.api_reference.title') }}
+                            </button>
+                        @endforeach
                     </nav>
                 </div>
 
                 <div class="ms-3">
-                    <div id="vertical-tab-with-border-1" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-1">
-                        <div class="prose  lg:prose-xl mx-auto px-4 mb-4 break-normal leading-normal">
-                            {!! Illuminate\Support\Str::markdown(File::get(resource_path('markdown/docs/api.md'))) !!}
+                    @foreach(config("laravel-docs.sections") as $section)
+                        <div
+                            id="vertical-tab-with-border-{{ $loop->iteration }}"
+                            role="tabpanel"
+                            aria-labelledby="vertical-tab-with-border-item-{{ $loop->iteration }}"
+                        >
+                            <div class="prose  lg:prose-xl mx-auto px-4 mb-4 break-normal leading-normal">
+                                {!! Illuminate\Support\Str::markdown(File::get(resource_path("markdown/docs/$section.md"))) !!}
+                            </div>
                         </div>
-                    </div>
-                    <div id="vertical-tab-with-border-2" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-2">
-                        <div class="prose  lg:prose-xl mx-auto px-4 mb-4 break-normal leading-normal">
-                            {!! Illuminate\Support\Str::markdown(File::get(resource_path('markdown/docs/api.md'))) !!}
-                        </div>
-                    </div>
-                    <div id="vertical-tab-with-border-3" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-3">
-                        <div class="prose  lg:prose-xl mx-auto px-4 mb-4 break-normal leading-normal">
-                            {!! Illuminate\Support\Str::markdown(File::get(resource_path('markdown/docs/api.md'))) !!}
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -1,10 +1,10 @@
 <x-guest-layout>
     <style>
         .tab-button {
-            border-right-width: 2px;
+            border-right-width: 3px;
             border-right-color: transparent;
             color: gray;
-            padding: 10px 20px;
+            padding: 3px 20px 3px 5px;
             font-size: 16px;
             cursor: pointer;
             transition: all 0.3s ease;

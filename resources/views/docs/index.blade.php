@@ -57,43 +57,46 @@
         </div>
     </div>
 
-    <section class="py-16 overflow-hidden">
-        <div class="container px-4 mx-auto max-w-6xl">
-            <div class="flex flex-wrap">
-                <div class="border-r border-gray-200">
-                    <nav class="flex flex-col space-y-2" aria-label="Tabs" role="tablist">
-                        @foreach(config("laravel-docs.sections") as $section)
-                            <button
+    <section class="py-16 px-4 mx-auto max-w-6xl overflow-hidden">
+        <p class="text-center font-mono text-sm select-none pb-12 text-gray-500">
+            {{ __('laravel-docs::docs.disclaimers.documentation_only_in_english') }}
+        </p>
+
+        <div class="flex flex-wrap">
+            <div class="border-r border-gray-200">
+                <nav class="flex flex-col space-y-2" aria-label="Tabs" role="tablist">
+                    @foreach(config("laravel-docs.sections") as $section)
+                        <button
                                 type="button"
                                 class="tab-button py-1 pe-4"
                                 data-hs-tab="#tab-{{ $loop->iteration }}"
                                 aria-controls="tab-{{ $loop->iteration }}"
                                 aria-selected="{{ $loop->first ? 'true' : 'false' }}"
-                            >
-                                {{ $loop->iteration }}. {{ __("laravel-docs::docs.sections.$section.title") }}
-                            </button>
-                        @endforeach
-                    </nav>
-                </div>
+                        >
+                            {{ $loop->iteration }}. {{ __("laravel-docs::docs.sections.$section.title") }}
+                        </button>
+                    @endforeach
+                </nav>
+            </div>
 
-                <div class="ms-3">
-                    @foreach(config("laravel-docs.sections") as $section)
-                        <div
+            <div class="ms-3">
+                @foreach(config("laravel-docs.sections") as $section)
+                    <div
                             id="tab-{{ $loop->iteration }}"
                             class="tab-panel {{ $loop->first ? 'active' : '' }}"
                             role="tabpanel"
-                        >
-                            <div class="prose  lg:prose-xl mx-auto px-4 mb-4 break-normal leading-normal">
-                                {!! Illuminate\Support\Str::markdown(File::get(resource_path("markdown/docs/$section.md"))) !!}
-                            </div>
+                    >
+                        <div class="prose  lg:prose-xl mx-auto px-4 mb-4 break-normal leading-normal">
+                            {!! Illuminate\Support\Str::markdown(File::get(resource_path("markdown/docs/$section.md"))) !!}
                         </div>
-                    @endforeach
-                </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
 
     @include(config('laravel-blog.footer_path'))
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {

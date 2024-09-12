@@ -6,6 +6,6 @@ return [
 
     'sections.overview.title' => 'Overview',
     'sections.introduction.title' => 'Introduction',
-    'sections.api_reference.title' => 'Api Reference',
+    'sections.api_reference.title' => 'API Reference',
 
 ];

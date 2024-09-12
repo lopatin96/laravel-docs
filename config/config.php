@@ -2,6 +2,8 @@
 
 return [
 
+    'footer_path' => 'sections.footer',
+
     'sections' => [
         'introduction',
         'overview',

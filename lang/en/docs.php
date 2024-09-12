@@ -2,8 +2,10 @@
 
 return [
 
-    'go-to-main' => 'Go to Main',
+    'buttons.back_to_website.title' => 'Back to Website',
 
-    'api_reference.title' => 'Api Reference',
+    'sections.overview.title' => 'Overview',
+    'sections.introduction.title' => 'Introduction',
+    'sections.api_reference.title' => 'Api Reference',
 
 ];

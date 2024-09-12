@@ -15,7 +15,7 @@
                             class=" flex items-center space-x-2 py-3 px-5 w-full text-white font-semibold rounded-xl focus:ring focus:outline-none focus:ring-gray-500 bg-black hover:bg-gray-900 transition ease-in-out duration-200 select-none"
                             href="{{ route('dashboard') }}"
                         >
-                            <span>{{ __('laravel-docs::docs.go-to-main') }}</span>
+                            <span>{{ __('laravel-docs::docs.buttons.back_to_website.title') }}</span>
 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -42,7 +42,7 @@
                                 aria-controls="vertical-tab-with-border-{{ $loop->iteration }}"
                                 role="tab"
                             >
-                                {{ $loop->iteration }}. {{ __('laravel-docs::docs.api_reference.title') }}
+                                {{ $loop->iteration }}. {{ __("laravel-docs::docs.sections.$section.title") }}
                             </button>
                         @endforeach
                     </nav>
@@ -64,6 +64,8 @@
             </div>
         </div>
     </section>
+
+    @include(config('laravel-blog.footer_path'))
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@preline/tabs@2.4.1/index.min.js"></script>

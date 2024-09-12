@@ -47,17 +47,17 @@
                 <div class="ms-3">
                     <div id="vertical-tab-with-border-1" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-1">
                         <div class="prose  lg:prose-xl mx-auto px-4 mb-4 break-normal leading-normal">
-                            {!! Illuminate\Support\Str::markdown(File::get(base_path('views/vendor/laravel-docs/markdowns/policy.md'))) !!}
+                            {!! Illuminate\Support\Str::markdown(File::get(resource_path('markdown/docs/api.md'))) !!}
                         </div>
                     </div>
                     <div id="vertical-tab-with-border-2" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-2">
                         <div class="prose  lg:prose-xl mx-auto px-4 mb-4 break-normal leading-normal">
-                            {!! Illuminate\Support\Str::markdown(File::get('/Users/vladyslavlopatin/Packages/laravel-docs/resources/views/markdowns/terms.md')) !!}
+                            {!! Illuminate\Support\Str::markdown(File::get(resource_path('markdown/docs/api.md'))) !!}
                         </div>
                     </div>
                     <div id="vertical-tab-with-border-3" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-3">
                         <div class="prose  lg:prose-xl mx-auto px-4 mb-4 break-normal leading-normal">
-                            {!! Illuminate\Support\Str::markdown(File::get('/Users/vladyslavlopatin/Packages/laravel-docs/resources/views/markdowns/policy.md')) !!}
+                            {!! Illuminate\Support\Str::markdown(File::get(resource_path('markdown/docs/api.md'))) !!}
                         </div>
                     </div>
                 </div>

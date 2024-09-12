@@ -1,10 +1,6 @@
 # Install
-### View
-#### Header
-Replace content of *resource/views/layouts/header.blade.php* with:
-```php
-@include('laravel-navigation::navigation.header')
-```
+### Markdowns docs
+Put your docs file (e.g. `api.md`) to `resource/markdown/docs` folder.
 
 # Publishing
 ### Localization

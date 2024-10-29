@@ -82,9 +82,9 @@
             <div class="ms-3">
                 @foreach(config("laravel-docs.sections") as $section)
                     <div
-                            id="tab-{{ $loop->iteration }}"
-                            class="tab-panel {{ $loop->first ? 'active' : '' }}"
-                            role="tabpanel"
+                        id="tab-{{ $loop->iteration }}"
+                        class="tab-panel {{ $loop->first ? 'active' : '' }}"
+                        role="tabpanel"
                     >
                         <div class="prose  lg:prose-xl mx-auto px-4 mb-4 break-normal leading-normal">
                             {!! Illuminate\Support\Str::markdown(File::get(resource_path("markdown/docs/$section.md"))) !!}

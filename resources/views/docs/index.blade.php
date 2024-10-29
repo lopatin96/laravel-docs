@@ -67,11 +67,11 @@
                 <nav class="flex flex-col space-y-2" aria-label="Tabs" role="tablist">
                     @foreach(config("laravel-docs.sections") as $section)
                         <button
-                                type="button"
-                                class="tab-button py-1 pe-4"
-                                data-hs-tab="#tab-{{ $loop->iteration }}"
-                                aria-controls="tab-{{ $loop->iteration }}"
-                                aria-selected="{{ $loop->first ? 'true' : 'false' }}"
+                            type="button"
+                            class="tab-button py-1 pe-4"
+                            data-hs-tab="#tab-{{ $loop->iteration }}"
+                            aria-controls="tab-{{ $loop->iteration }}"
+                            aria-selected="{{ $loop->first ? 'true' : 'false' }}"
                         >
                             {{ $loop->iteration }}. {{ __("laravel-docs::docs.sections.$section.title") }}
                         </button>

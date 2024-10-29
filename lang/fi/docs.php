@@ -2,8 +2,8 @@
 
 return [
 
-    'buttons.back_to_website.title' => 'Back to Website',
-    'disclaimers.documentation_only_in_english' => 'Documentation is available in English only',
+    'buttons.back_to_website.title' => 'Takaisin verkkosivustolle',
+    'disclaimers.documentation_only_in_english' => 'Dokumentaatio on saatavilla vain englanniksi',
 
     'sections.overview.title' => 'Overview',
     'sections.introduction.title' => 'Introduction',

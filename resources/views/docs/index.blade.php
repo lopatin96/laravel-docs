@@ -58,9 +58,9 @@
     </div>
 
     <section class="py-16 px-4 mx-auto max-w-6xl overflow-hidden">
-        <p class="text-center font-mono text-sm select-none pb-12 text-gray-500">
+        <div class="mx-auto mb-10 p-3 text-center font-mono text-sm select-none text-gray-600 bg-blue-50 border border-blue-100">
             {{ __('laravel-docs::docs.disclaimers.documentation_only_in_english') }}
-        </p>
+        </div>
 
         <div class="flex flex-wrap">
             <div class="border-r border-gray-200">

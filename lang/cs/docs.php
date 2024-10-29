@@ -2,8 +2,8 @@
 
 return [
 
-    'buttons.back_to_website.title' => 'Back to Website',
-    'disclaimers.documentation_only_in_english' => 'Documentation is available in English only',
+    'buttons.back_to_website.title' => 'Zpět na webové stránky',
+    'disclaimers.documentation_only_in_english' => 'Dokumentace je k dispozici pouze v angličtině',
 
     'sections.overview.title' => 'Overview',
     'sections.introduction.title' => 'Introduction',
